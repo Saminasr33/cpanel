@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create account</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>create new account</h1>
+
+    </div>
+    <form class="form" action="#">
+        <label for="new-user">username</label>
+        <input type="text" maxlength="20" placeholder="username" id="new-user">
+        <label for="add-pass">password</label>
+        <input type="password" required placeholder="password" id="add-pass">
+        <label for="add-pass2">confirm password</label>
+        <input type="password" required placeholder="confirm password" id="add-pass2">
+        <button id="btn-pass">show password</button>
+        <label for="add-email">Email</label>
+        <input type="email" onkeydown="emailsearch(this.value)" required placeholder="Email" id="add-email">
+        <label for="tel">tel</label>
+        <input type="tel" id="tel" required>
+        <div class="male">
+            <label for="male">male</label>
+            <input type="radio" checked name="sex" id="male">
+            <label for="female">female</label>
+            <input type="radio" name="sex" id="female">
+        </div>
+        <div class="chackbox">
+            <input required type="checkbox" id="rouls"><label for="rouls">i agree to all terms, privacy policy and
+                fees</label>
+        </div>
+        <button type="submit" id="submit-btn">register</button>
+        <p>already have an account?</p>
+        <button id="singin-btn">continue with email</button>
+    </form>
+    <div class="footer">
+        <h3>design</h3>
+        <p>sami nasr</p>
+    </div>
+    <script src="clientsjs.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>login</title>
+</head>
+
+<body>
+    <div class="hellp">
+        <p> username : admin</p>
+        <br>
+        <p> password : 123456789</p>
+    </div>
+    <fieldset>
+        <legend>cpanel login</legend>
+        <form class="loginform" action="index.html">
+            <label for="username">username</label>
+            <input placeholder="user name" type="text" name="username" required id="username">
+            <label for="password">password</label>
+            <input placeholder="password" type="password" name="password" required id="password">
+            <div class="subbtn">
+                <button type="reset">reset</button>
+                <button type="submit">login</button>
+            </div>
+            <p id="mesage"></p>
+        </form>
+    </fieldset>
+    <script>
+        // login box *****
+
+
+
+        const loginform = document.querySelector('.loginform');
+        const correctuser = 'admin';
+        const correctpass = '123456789';
+
+        loginform.addEventListener('submit', function () {
+            const logname = document.getElementById('username').value;
+            const logpass = document.getElementById('password').value;
+            const mesage = document.getElementById('mesage');
+            if (logname == correctuser && logpass == correctpass) {
+                let uaspas = ['admin', '123456789']
+                localStorage.setItem('userpass', JSON.stringify(uaspas))
+                mesage.innerText = 'تم تسجسل الدخول'
+            } else {
+                alert('خطاء')
+                event.preventDefault()
+            }
+        })
+        if (localStorage.getItem('userpass') != undefined) {
+            window.location.href = 'index.html'
+        }
+
+        // login end
+    </script>
+</body>
+
+</html>

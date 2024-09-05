@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <title>control panel</title>
+</head>
+
+<body>
+    <!-- *******menu******** -->
+    <div class="menu">
+        <ul id="list">
+            <li class="profile" title="edit profile">
+                <div class="img-box">
+                    <img class="img-pro" src="img/profile/1.jpg" alt="profile">
+                </div>
+                <h2 class="name-pro">sami nasr</h2>
+            </li>
+
+            <li>
+                <a href="#" title="home">
+                    <i><img src="img/icon/home_house_3526.png"></i>
+                    <!-- <i class="fa fa-home"></i> -->
+                    <p>dashboard</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="clients">
+                    <i><img src="img/icon/3289557-clan-group-partners-peers-people_107100.png"></i>
+                    <!-- <i class="fa fa-group"></i> -->
+                    <p>clients</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="products">
+                    <i><img src="img/icon/table_icon-icons.com_70854.png"></i>
+                    <!-- <i class="fa fa-table"></i> -->
+                    <p>products</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="charts">
+                    <i><img src="img/icon/piechart_80941.png"></i>
+                    <!-- <i class="fa fa-chart-pie"></i> -->
+                    <p>charts</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="posts">
+                    <i><img src="img/icon/pen-black-diagonal-symbol-of-writing-tool_icon-icons.com_54470.png"></i>
+                    <!-- <i class="fa fa-pen"></i> -->
+                    <p>posts</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="favorite">
+                    <i><img src="img/icon/star-point_icon-icons.com_68483.png"></i>
+                    <!-- <i class="fa fa-star"></i> -->
+                    <p>favorite</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="settings">
+                    <i><img src="img/icon/cog-wheel-silhouette_icon-icons.com_73617.png"></i>
+                    <!-- <i class="fa fa-cog"></i> -->
+                    <p>settings</p>
+                </a>
+            </li>
+            <li class="log-out">
+                <a href="" onclick="logout()" title="log out">
+                    <i><img src="img/icon/sign-out_icon-icons.com_69908.png"></i>
+                    <!-- <i class="fa fa-sign-out"></i> -->
+                    <p>log out</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- edite profile  -->
+    <div class="content">
+        <div class="other-photo">
+            <img onclick="changephoto(this.src)" src="img/profile/1.jpg">
+            <img onclick="changephoto(this.src)" src="img/profile/2.jpg">
+            <img onclick="changephoto(this.src)" src="img/profile/3.jpg">
+            <img onclick="changephoto(this.src)" src="img/profile/4.jpg">
+            <img onclick="changephoto(this.src)" src="img/profile/5.jpg">
+            <img onclick="changephoto(this.src)" src="img/profile/6.jpg">
+        </div>
+        <div class="edit-profile">
+            <div class="img-view">
+                <img id="img-pro" src="img/profile/1.jpg" alt="profile">
+            </div>
+            <span id="oldname"></span>
+            <input type="file" name="file" id="file">
+            <label for="file" class="btn" id="upload">upload photo</label>
+
+            <input maxlength="15" type="text" id="new-name" placeholder="new name">
+            <div class="saveprofile"><button id="clearname" class="btn" onclick="clearname()">clear name</button>
+                <button id="savename" class="btn" onclick="clearname()">save</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- *********content dashboard******* -->
+    <div class="content show">
+        <div class="title-info" tabindex="0">
+            <p>dashboard</p>
+            <!-- <i class="fa fa-chart-bar"></i> -->
+            <i><img src="img/icon/chart_horizontal_bar_chart_icon_264072.png"></i>
+        </div>
+        <!-- **** -->
+        <div class="data-info">
+            <div class="box">
+                <!-- <i class="fa fa-user"></i> -->
+                <i><img src="img/icon/user_icon-icons.com_57997.png"></i>
+                <div class="data">
+                    <p>user</p>
+                    <span>100</span>
+                </div>
+            </div>
+            <div class="box">
+                <!-- <i class="fa fa-pen"></i> -->
+                <i><img src="img/icon/pen-black-diagonal-symbol-of-writing-tool_icon-icons.com_54470.png"></i>
+                <div class="data">
+                    <p>posts</p>
+                    <span>463</span>
+                </div>
+            </div>
+            <div class="box">
+                <!-- <i class="fa fa-table"></i> -->
+                <i><img src="img/icon/table_icon-icons.com_70854.png"></i>
+                <div class="data">
+                    <p>products</p>
+                    <span id="id-product"></span>
+                </div>
+            </div>
+            <div class="box">
+                <!-- <i class="fa fa-dollar"></i> -->
+                <i><img src="img/icon/dolar.png"></i>
+                <div class="data">
+                    <p>revenue</p>
+                    <span>$100</span>
+                </div>
+            </div>
+        </div>
+        <!-- ******products******* -->
+        <div id="hiden-table" class="title-info" tabindex="0">
+            <p>products</p>
+            <!-- <i class="fa fa-table"></i> -->
+            <i><img src="img/icon/table_icon-icons.com_70854.png"></i>
+        </div>
+        <!-- ******table***** -->
+        <div class="home-table">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+    <!-- ***** content clients***** -->
+    <div class="content">
+        <div class="clients-table">
+            <a href="register.html">create new account</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>info</th>
+                        <th>name</th>
+                        <th>active</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody id="uertable">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- ***** content products ***** -->
+    <div class="content">
+        <div class="insert-pro">
+            <div><label for="product">Title</label>
+                <input placeholder="Title" type="text" id="product">
+            </div>
+            <div><label for="price">Price</label>
+                <input placeholder="price" type="number" id="price">
+            </div>
+            <div><label for="count">Count</label>
+                <input max="100" placeholder="max 100" type="number" id="count">
+            </div>
+            <div><label for="category">Category</label>
+                <input placeholder="category" type="text" id="category">
+            </div>
+            <div id="div-create">
+                <button class="btn" title="create" id="submit">Create</button>
+                <button title="delete all" class="btn" id="btndlelte" onclick="deleteall()">Delete all</button>
+            </div>
+        </div>
+        <div class="search">
+            <div class="inpt-search">
+                <label for="inp-search">SEARCH</label>
+                <input onkeyup="datasearch(this.value)" placeholder="search" type="text" id="inp-search">
+            </div>
+            <div class="btn-search">
+                <button onclick="getsearchmood(this.id)" class="btn" id="searchTitle">search by title</button>
+                <button onclick="getsearchmood(this.id)" class="btn" id="searchcategory">search by category</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody id="tbody2">
+            </tbody>
+        </table>
+    </div>
+    <!-- ***** content charts ***** -->
+    <div class="content">
+        <h1 id="new">تحت الانشاء</h1>
+    </div>
+    <!-- ***** content posts ***** -->
+    <div class="content">
+        <h1 id="new">تحت الانشاء</h1>
+    </div>
+    <!-- ***** content favorite***** -->
+    <div class="content">
+        <h1 id="new">تحت الانشاء</h1>
+
+    </div>
+    <!-- ***** content ***** -->
+    <div class="content">
+        <h1 id="new">تحت الانشاء</h1>
+
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

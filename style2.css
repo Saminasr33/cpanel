@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 70px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: capitalize;
+    text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 20px #000;
+}
+
+.form {
+    width: 40%;
+    border: 1px dashed #00000090;
+    border-radius: 20px;
+    display: flex;
+    color: #444;
+    justify-content: center;
+    padding: 15px 80px;
+    flex-direction: column;
+    background: linear-gradient(rgba(100, 148, 237, 0.704), #ffffff68);
+    box-shadow: 0 0 5px #fff,
+        0 0 10px #000,
+        0 0 20px #fff,
+        0 0 30px #000,
+        0 0 40px #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #0000ff, 0 0 20px #fff, 0 0 30px #0000fff1, 0 0 40px #fff;
+}
+
+.form label,
+input,
+span,
+p,
+button {
+    padding: 5px;
+    margin: 5px;
+    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.form input {
+    outline: none;
+    border: none;
+    background-color: #80808054;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.form input:focus {
+    transform: scale(1.1);
+    background-color: #fff;
+}
+
+.chackbox {
+    margin: 10px;
+    width: 100%;
+}
+
+.form button {
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px #000;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+.form button:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+}
+
+.footer {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.male {
+
+    border-bottom: 1px solid #000;
+    text-align: center;
+    padding: 10px;
+}
+
+#submit-btn {
+    background-color: red;
+    color: #fff;
+}
